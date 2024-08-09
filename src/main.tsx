@@ -2,27 +2,32 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Home from "./pages/home/home.tsx";
+import Login from "./pages/login/login.tsx";
+import SnapMeal from './pages/snap/snap-meal.tsx';
+import UserProfile from "./pages/social/user-profile.tsx";
+import MealPlanner from "./pages/meal-planner/meal-planner.tsx";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <article>Home page!</article>
+        element: <Home />
     },
     {
         path: "/log-in",
-        element: <article>Log in page!</article>
+        element: <Login />
     },
     {
         path: "/snap",
-        element: <article>Snap a meal!</article>
+        element: <SnapMeal />
     },
     {
         path: "/my-profile",
-        element: <article>My profile!</article>
+        element: <UserProfile />
     },
     {
         path: "/meal-planner",
-        element: <article>Meal planner!</article>
+        element: <MealPlanner />
     }
     ])
 
