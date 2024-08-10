@@ -1,0 +1,15 @@
+.footer {
+  height: 100px;
+  align-self: flex-end;
+
+  button {
+    height: 99px;
+    overflow: hidden;
+    width: 100px;
+    border: 1px solid black;
+    &:hover {
+      background-color: lightgray;
+      transition: background-color 0.1s;
+    }
+  }
+}
