@@ -19,6 +19,8 @@
     height: 240px;
     &--image {
       object-fit: contain;
+      height: 200px;
+      background-color: white;
     }
     &--label {
       width: 80%;

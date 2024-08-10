@@ -14,19 +14,19 @@ const Home = () => {
             <div className="home--date">{dateString}</div>
             <section className="home--meals">
                 <div className="home--meal">
-                    <img className="home--meal--image" src="/assets/donut.jpg" alt="Breakfast"/>
+                    <img className="home--meal--image" src="/assets/donut.jpg" alt="Full English breakfast" />
                     <div className="home--meal--label">Breakfast</div>
                 </div>
                 <div className="home--meal">
-                    <img className="home--meal--image" src="/assets/spaghetti.jpg" alt="Breakfast"/>
+                    <img className="home--meal--image" src="/assets/salad.jpg" alt="Salad" />
                     <div className="home--meal--label">Lunch</div>
                 </div>
                 <div className="home--meal">
-                    <img className="home--meal--image" src="/assets/breakfast.jpg" alt="Breakfast"/>
+                    <img className="home--meal--image" src="/assets/apple.jpg" alt="Apple" />
                     <div className="home--meal--label">Snack</div>
                 </div>
                 <div className="home--meal">
-                    <img className="home--meal--image" src="/assets/breakfast.jpg" alt="Breakfast"/>
+                    <img className="home--meal--image" src="/assets/spaghetti.jpg" alt="Spaghetti" />
                     <div className="home--meal--label">Dinner</div>
                 </div>
             </section>
