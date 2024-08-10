@@ -1,7 +1,7 @@
 .home {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
   text-align: center;
   background-color: inherit;
   flex-grow: 1;
@@ -10,9 +10,36 @@
     display: grid;
     grid-template-columns: 200px 200px;
     grid-template-rows: 200px 200px;
-    grid-gap: 20px;
+    grid-gap: 40px 20px;
+  }
+  &--meal {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    height: 240px;
+    &--image {
+      object-fit: contain;
+    }
+    &--label {
+      width: 80%;
+      background-color: white;
+      border: 1px solid white;
+      border-radius: 8px;
+      margin: 0 auto;
+    }
   }
   &--title {
-
+    border: 2px solid black;
+    border-radius: 24px;
+    width: 200px;
+    padding: 6px;
+    margin: 0 auto;
+    font-weight: bold;
+    font-size: larger;
+    background-image: linear-gradient(to right, #c9fadb, #96bcfd);
+  }
+  &--date {
+    font-size: large;
+    font-weight: bold;
   }
 }

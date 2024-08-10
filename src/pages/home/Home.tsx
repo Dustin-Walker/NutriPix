@@ -13,10 +13,22 @@ const Home = () => {
             <div className="home--title">Log Food</div>
             <div className="home--date">{dateString}</div>
             <section className="home--meals">
-                <button className="breakfast">Breakfast</button>
-                <button className="breakfast">Lunch</button>
-                <button className="breakfast">Snack</button>
-                <button className="breakfast">Dinner</button>
+                <div className="home--meal">
+                    <img className="home--meal--image" src="/assets/donut.jpg" alt="Breakfast"/>
+                    <div className="home--meal--label">Breakfast</div>
+                </div>
+                <div className="home--meal">
+                    <img className="home--meal--image" src="/assets/spaghetti.jpg" alt="Breakfast"/>
+                    <div className="home--meal--label">Lunch</div>
+                </div>
+                <div className="home--meal">
+                    <img className="home--meal--image" src="/assets/breakfast.jpg" alt="Breakfast"/>
+                    <div className="home--meal--label">Snack</div>
+                </div>
+                <div className="home--meal">
+                    <img className="home--meal--image" src="/assets/breakfast.jpg" alt="Breakfast"/>
+                    <div className="home--meal--label">Dinner</div>
+                </div>
             </section>
         </article>
     </MobilePageWrapper>
