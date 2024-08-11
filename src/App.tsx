@@ -18,7 +18,7 @@ const router = createBrowserRouter([
         element: <Snap />
     },
 ],
-{ basename: "/NutriPix" }
+{ basename: "/NutriPix/" }
 )
 
 function App() {
