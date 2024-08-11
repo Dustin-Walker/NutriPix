@@ -1,5 +1,7 @@
 ## NutriPix
 Nutripix is a **free** and *easy* to use meal tracker app that leverages modern AI image detection technology to meet your nutrition and health goals. Different from the rest, NutriPix does not interfere with **your** routine, providing you with a variety of health-based metrics without the hassle. Try our prototype today!
+
+### [Available here!](https://dustin-walker.github.io/NutriPix/)
 ***
 
 ## How To Run
@@ -20,8 +22,11 @@ Node 20+ is recommended ([link](https://nodejs.org/en/download/package-manager))
 ## Built With
 * [React](https://react.dev/)
 * [Vite](https://vitejs.dev/)
-* [Tanstack Query](https://tanstack.com/query/latest)
 * [TypeScript](https://www.typescriptlang.org/)
+
+## Deployed With
+* GitHub pages
+* GitHub actions
 
 *** 
 ## Contributors
