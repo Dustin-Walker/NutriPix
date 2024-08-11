@@ -1,12 +1,15 @@
 import MobilePageWrapper from "../../components/MobilePageWrapper/MobilePageWrapper.tsx";
 import {getOpenAIResponse} from "../../apis/openai/openai.ts";
 import {useState} from "react";
+import Title from "../../components/Title/Title.tsx";
+import "./Snap.scss";
 
 interface NutritionInfo {
     totalCalories: number,
     lipidCalories: number,
     carbohydrateCalories: number,
     proteinCalories: number
+    description: string;
 }
 
 const fileDataURL = (file: any) => new Promise<string>((resolve,reject) => {
@@ -30,24 +33,37 @@ const Snap = () => {
 
     return (
         <MobilePageWrapper>
-            Snap a Meal
-            <input
-                type="file"
-                name="food-image"
-                className="snap-meal-btn"
-                onChange={
-                    (event) => onSnapMeal(event, setNutritionInfo)
+            <article className="snap-meal">
+                <Title title="Snap a Meal" />
+                <input
+                    type="file"
+                    name="food-image"
+                    className="snap-meal-btn"
+                    onChange={
+                        (event) => onSnapMeal(event, setNutritionInfo)
+                    }
+                />
+                {
+                    nutritionInfo &&
+                    <section className="nutrition-estimate">
+                        <div className="nutrition-data">
+                            {nutritionInfo.description}
+                        </div>
+                        <div className="nutrition-data">
+                            {`Total calories: ${nutritionInfo.totalCalories}`}
+                        </div>
+                        <div className="nutrition-data">
+                            {`Carbohydrate calories: ${nutritionInfo.carbohydrateCalories}`}
+                        </div>
+                        <div className="nutrition-data">
+                            {`Lipid calories: ${nutritionInfo.lipidCalories}`}
+                        </div>
+                        <div className="nutrition-data">
+                            {`Protein calories: ${nutritionInfo.proteinCalories}`}
+                        </div>
+                    </section>
                 }
-            />
-            {
-                nutritionInfo &&
-                <section className="nutrition-estimate">
-                    <div>{`Total calories: ${nutritionInfo.totalCalories}`}</div>
-                    <div>{`Carbohydrate calories: ${nutritionInfo.carbohydrateCalories}`}</div>
-                    <div>{`Lipid calories: ${nutritionInfo.lipidCalories}`}</div>
-                    <div>{`Protein calories: ${nutritionInfo.proteinCalories}`}</div>
-                </section>
-            }
+            </article>
         </MobilePageWrapper>
     )
 }

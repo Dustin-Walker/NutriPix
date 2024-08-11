@@ -3,7 +3,7 @@ import changeRoute from "../../utils/changeRoute.ts";
 
 const Footer = () => (
     <footer className="footer">
-        <button>Reports</button>
+        <button onClick={(e) => changeRoute(e, '')}>Home</button>
         <button>Notes</button>
         <button onClick={(e) => changeRoute(e, 'snap')}>Snap</button>
         <button>Plate</button>

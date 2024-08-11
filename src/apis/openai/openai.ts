@@ -26,7 +26,7 @@ export const getOpenAIResponse = async (imageData: string) => {
                 "content": [
                     {
                         type: "text",
-                        text: "Determine what type of food this is and provide an accurate estimation of calories using the JSON schema {totalCalories: number, lipidCalories: number, carbohydrateCalories: number, proteinCalories: number}."
+                        text: "Determine what type of food this is and provide a brief description and an accurate estimation of calories using the JSON schema {description: string, totalCalories: number, lipidCalories: number, carbohydrateCalories: number, proteinCalories: number}."
                     },
                     {
                         type: "image_url",

@@ -1,0 +1,26 @@
+.snap-meal {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  flex-grow: 1;
+}
+
+.nutrition-estimate {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  background-color: white;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 1px solid black;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.nutrition-data {
+  text-align: center;
+}
+
+.snap-meal-btn {
+  margin: 0 auto;
+}

@@ -1,5 +1,6 @@
 import MobilePageWrapper from "../../components/MobilePageWrapper/MobilePageWrapper.tsx";
 import "./Home.scss";
+import Title from "../../components/Title/Title.tsx";
 
 const Home = () => {
     const date = new Date();
@@ -10,7 +11,7 @@ const Home = () => {
     return (
     <MobilePageWrapper>
         <article className="home">
-            <div className="home--title">Log Food</div>
+            <Title title="Home" />
             <div className="home--date">{dateString}</div>
             <section className="home--meals">
                 <div className="home--meal">
