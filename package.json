@@ -2,7 +2,7 @@
   "name": "nutripix-ui",
   "private": true,
   "version": "0.0.0",
-  "homepage": "http://dustin-walker.github.io/NutriPix",
+  "homepage": "http://dustin-walker.github.io/NutriPix/",
 
   "scripts": {
     "dev": "vite",
