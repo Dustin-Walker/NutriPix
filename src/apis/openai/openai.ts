@@ -16,7 +16,7 @@ export const getOpenAIResponse = async (prompt: string) => {
         messages: [
             {
                 "role": "system",
-                "content": "You are a helpful assistant."
+                "content": "You are a nutrition analyzer. You will look at a description of some food and provide an accurate estimation of calories using the JSON schema {totalCalories: number, lipidCalories: number, carbohydrateCalories: number, proteinCalories: number}."
             },
             {
                 "role": "user",
