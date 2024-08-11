@@ -1,5 +1,7 @@
+import "./Footer.scss";
+
 const Footer = () => (
-    <footer>
+    <footer className="footer">
         <button>Reports</button>
         <button>Notes</button>
         <button>Snap</button>
