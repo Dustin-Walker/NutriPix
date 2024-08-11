@@ -14,7 +14,7 @@ const Login = () => {
             <section className="login--credentials">
                 <input type="email" placeholder="Email"/>
                 <input type="password" placeholder="Password"/>
-                <button onClick={() => navigate("")}>Login</button>
+                <button onClick={() => navigate("/")}>Login</button>
             </section>
         </article>
     </MobilePageWrapper>)}

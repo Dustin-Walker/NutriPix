@@ -1,16 +1,16 @@
 import axios from "axios";
 
-const openai = axios.create({
-    baseURL: 'https://api.openai.com/v1',
-    headers: {
-        'Content-Type': 'application/json',
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-expect-error
-        'Authorization': `Bearer ${window.keys?.openAI}`,
-    },
-});
-
 export const getOpenAIResponse = async (imageData: string) => {
+    const openai = axios.create({
+        baseURL: 'https://api.openai.com/v1',
+        headers: {
+            'Content-Type': 'application/json',
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-expect-error
+            'Authorization': `Bearer ${window.openAIKey}`,
+        },
+    });
+
     const response = await openai.post('/chat/completions', {
         model: "gpt-4o-mini",
         max_tokens: 100,
