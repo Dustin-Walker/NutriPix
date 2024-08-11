@@ -1,6 +1,21 @@
+import Header from "../Header/Header";
 import "./MobilePageWrapper.scss"
 import React from "react";
+import Footer from "../Footer/Footer.tsx";
 
-const MobilePageWrapper = ({children}: {children: React.ReactNode}) => (<div className="mobile-page-wrapper">{children}</div>);
+interface MobilePageWrapperProps {
+    children: React.ReactNode,
+    omitFooter?: boolean,
+}
+
+const MobilePageWrapper = (
+    {children, omitFooter}: MobilePageWrapperProps
+) => (
+    <div className="mobile-page-wrapper">
+        <Header />
+        {children}
+        {!omitFooter && <Footer />}
+    </div>
+);
 
 export default MobilePageWrapper;
