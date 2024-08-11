@@ -1,11 +1,12 @@
-import {openAI} from "../keys.ts";
 import axios from "axios";
 
 const openai = axios.create({
     baseURL: 'https://api.openai.com/v1',
     headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${openAI}`,
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-expect-error
+        'Authorization': `Bearer ${window.keys.openAI}`,
     },
 });
 
