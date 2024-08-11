@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # API keys
-src/api/keys.ts
+src/apis/keys.ts
