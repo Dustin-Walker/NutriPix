@@ -1,0 +1,36 @@
+.login {
+  background-color: #11c0df;
+  display: grid;
+  grid-template-columns: 200px auto;
+  height: 700px;
+
+  &--pictures {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 10px;
+  }
+
+  &--picture {
+    height: 180px;
+    width: 180px;
+    border: 1px solid black;
+    border-radius: 4px;
+  }
+
+  &--credentials {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 60px 12px 0 12px;
+    input {
+      border: 2px solid black;
+      border-radius: 16px;
+      background-color: #c5f5dc;
+      text-align: center;
+      height: 24px;
+      font-weight: 700;
+      color: black;
+    }
+  }
+}

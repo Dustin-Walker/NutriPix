@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from "./pages/home/home.tsx";
-import Login from "./pages/login/login.tsx";
+import Login from "./pages/login/Login.tsx";
 import SnapMeal from './pages/snap/snap-meal.tsx';
 import UserProfile from "./pages/social/user-profile.tsx";
 import MealPlanner from "./pages/meal-planner/meal-planner.tsx";
