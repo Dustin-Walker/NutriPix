@@ -1,11 +1,10 @@
-import changeRoute from "../../utils/changeRoute.ts";
 import MobilePageWrapper from "../../components/MobilePageWrapper/MobilePageWrapper.tsx";
 import "./Login.scss";
+import {useNavigate} from "react-router-dom";
 
-const onLogin = (event: any): void => changeRoute(event, '');
-
-const Login = () => (
-    <MobilePageWrapper omitFooter>
+const Login = () => {
+    const navigate = useNavigate();
+    return (<MobilePageWrapper omitFooter>
         <article className="login">
             <section className="login--pictures">
                 <img className="login--picture" src="/assets/breakfast.jpg" alt="Full english breakfast"/>
@@ -15,9 +14,9 @@ const Login = () => (
             <section className="login--credentials">
                 <input type="email" placeholder="Email"/>
                 <input type="password" placeholder="Password"/>
-                <button onClick={onLogin}>Login</button>
+                <button onClick={() => navigate("")}>Login</button>
             </section>
         </article>
-    </MobilePageWrapper>)
+    </MobilePageWrapper>)}
 
 export default Login;

@@ -1,14 +1,17 @@
 import "./Footer.scss";
-import changeRoute from "../../utils/changeRoute.ts";
+import {useNavigate} from "react-router-dom";
 
-const Footer = () => (
-    <footer className="footer">
-        <button onClick={(e) => changeRoute(e, '')}>Home</button>
-        <button onClick={(e) => changeRoute(e, 'login')}>Log In</button>
-        <button onClick={(e) => changeRoute(e, 'snap')}>Snap</button>
-        <button>Plate</button>
-        <button>Profile</button>
-    </footer>
-);
+const Footer = () => {
+        const navigate = useNavigate();
+        return (
+            <footer className="footer">
+                    <button onClick={() => navigate("/")}>Home</button>
+                    <button onClick={() => navigate("/login")}>Log In</button>
+                    <button onClick={() => navigate("/snap")}>Snap</button>
+                    <button>Plate</button>
+                    <button>Profile</button>
+            </footer>
+        );
+}
 
 export default Footer;
