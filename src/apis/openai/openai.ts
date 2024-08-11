@@ -6,7 +6,7 @@ const openai = axios.create({
         'Content-Type': 'application/json',
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-expect-error
-        'Authorization': `Bearer ${window.keys.openAI}`,
+        'Authorization': `Bearer ${window.keys?.openAI}`,
     },
 });
 
