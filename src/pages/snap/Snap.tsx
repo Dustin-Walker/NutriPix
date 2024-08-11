@@ -9,7 +9,7 @@ interface NutritionInfo {
     proteinCalories: number
 }
 
-const onSnapMeal = async (setNutritionInfo: any) => {
+const onSnapMeal = async (event: any, setNutritionInfo: any) => {
     const response = await getOpenAIResponse('single serving of chocolate cake');
     const responseMessage = response.choices[0].message.content;
     const nutritionInfo: NutritionInfo = JSON.parse(responseMessage);
@@ -21,7 +21,15 @@ const Snap = () => {
 
     return (
         <MobilePageWrapper>
-            <button className="snap-meal-btn" onClick={() => onSnapMeal(setNutritionInfo)}>Snap a Meal</button>
+            Snap a Meal
+            <input
+                type="file"
+                name="food-image"
+                className="snap-meal-btn"
+                onChange={
+                    (event) => onSnapMeal(event, setNutritionInfo)
+                }
+            />
             {
                 nutritionInfo &&
                 <section className="nutrition-estimate">
