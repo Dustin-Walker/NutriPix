@@ -2,14 +2,22 @@ import MobilePageWrapper from "../../components/MobilePageWrapper/MobilePageWrap
 import {getOpenAIResponse} from "../../apis/openai/openai.ts";
 import {useState} from "react";
 
+interface NutritionInfo {
+    totalCalories: number,
+    lipidCalories: number,
+    carbohydrateCalories: number,
+    proteinCalories: number
+}
+
 const onSnapMeal = async (setNutritionInfo: any) => {
-    const response = await getOpenAIResponse('write a haiku about cake');
+    const response = await getOpenAIResponse('single serving of chocolate cake');
     const responseMessage = response.choices[0].message.content;
-    setNutritionInfo(responseMessage);
+    const nutritionInfo: NutritionInfo = JSON.parse(responseMessage);
+    setNutritionInfo(nutritionInfo);
 }
 
 const Snap = () => {
-    const [nutritionInfo, setNutritionInfo] = useState<string | undefined>()
+    const [nutritionInfo, setNutritionInfo] = useState<NutritionInfo | undefined>(undefined)
 
     return (
         <MobilePageWrapper>
@@ -17,7 +25,10 @@ const Snap = () => {
             {
                 nutritionInfo &&
                 <section className="nutrition-estimate">
-                    {nutritionInfo}
+                    <div>{`Total calories: ${nutritionInfo.totalCalories}`}</div>
+                    <div>{`Carbohydrate calories: ${nutritionInfo.carbohydrateCalories}`}</div>
+                    <div>{`Lipid calories: ${nutritionInfo.lipidCalories}`}</div>
+                    <div>{`Protein calories: ${nutritionInfo.proteinCalories}`}</div>
                 </section>
             }
         </MobilePageWrapper>
