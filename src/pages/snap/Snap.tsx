@@ -9,8 +9,17 @@ interface NutritionInfo {
     proteinCalories: number
 }
 
+const fileDataURL = (file: any) => new Promise<string>((resolve,reject) => {
+    const fr = new FileReader();
+    fr.onload = () => resolve( fr.result as string);
+    fr.onerror = reject;
+    fr.readAsDataURL( file)
+});
+
 const onSnapMeal = async (event: any, setNutritionInfo: any) => {
-    const response = await getOpenAIResponse('single serving of chocolate cake');
+    const imageFile = event.target.files[0];
+    const imageBase64: string = await fileDataURL(imageFile);
+    const response = await getOpenAIResponse(imageBase64);
     const responseMessage = response.choices[0].message.content;
     const nutritionInfo: NutritionInfo = JSON.parse(responseMessage);
     setNutritionInfo(nutritionInfo);

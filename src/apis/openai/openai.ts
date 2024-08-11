@@ -9,19 +9,34 @@ const openai = axios.create({
     },
 });
 
-export const getOpenAIResponse = async (prompt: string) => {
+export const getOpenAIResponse = async (imageData: string) => {
     const response = await openai.post('/chat/completions', {
-        model: "gpt-3.5-turbo",
+        model: "gpt-4o-mini",
         max_tokens: 100,
+        response_format: {
+            "type": "json_object"
+        },
         messages: [
             {
                 "role": "system",
-                "content": "You are a nutrition analyzer. You will look at a description of some food and provide an accurate estimation of calories using the JSON schema {totalCalories: number, lipidCalories: number, carbohydrateCalories: number, proteinCalories: number}."
+                "content": "You are a nutrition analyzer."
             },
             {
                 "role": "user",
-                "content": prompt
-            }
+                "content": [
+                    {
+                        type: "text",
+                        text: "Determine what type of food this is and provide an accurate estimation of calories using the JSON schema {totalCalories: number, lipidCalories: number, carbohydrateCalories: number, proteinCalories: number}."
+                    },
+                    {
+                        type: "image_url",
+                        image_url: {
+                            url: imageData,
+                        },
+                    },
+                ]
+            },
+
         ]
     });
     return response.data;
